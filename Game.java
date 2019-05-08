@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 class Game {
 
+    public static final java.lang.String INVALID_INPUT = "Invalid Input. You're a moron.";
     private static final String GO_TEXT = "Auf geht's!";
     private static final String EQUIPMENT_TEXT = "Waehle Deine Ausruestung: [Schwert] oder [Bogen]? ";
     private static final String CHOICE_INTRO_TEXT = "Alles klar. Der Weg teilt sich hier auf. Was willst du tun?";
@@ -68,7 +69,7 @@ class Game {
                     System.out.print(A_4);
                     return scanner.next();
                 default:
-                    throw new IOException("Invalid Input. You're a moron.");
+                    throw new IOException(INVALID_INPUT);
             }
         }
         if (equipment.equals("Bogen")) {
@@ -86,10 +87,10 @@ class Game {
                     System.out.print(B_4);
                     return scanner.next();
                 default:
-                    throw new IOException("Invalid Input. You're a moron.");
+                    throw new IOException(INVALID_INPUT);
             }
         }
-        throw new IOException("Invalid Input. You're a moron.");
+        throw new IOException(INVALID_INPUT);
 
     }
 
@@ -131,7 +132,7 @@ class Game {
             case "verstecken":
                 return B_4_G;
             default:
-                throw new IOException("Invalid Input. You're a moron.");
+                throw new IOException(INVALID_INPUT);
         }
     }
 }
