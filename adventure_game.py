@@ -1,4 +1,4 @@
-orig_src = [x[:-1] for x in open('./old_source/adventure-game/Game.java').readlines()]
+orig_src = [x[:-1] for x in open('./Game.java').readlines()]
 
 
 short_vars = {}
