@@ -25,7 +25,7 @@ def prep_str(t):
     return conv_umlauts(t.strip().replace('\\n', '\n'))[1:-2]
 
 
-print(instructions)
+# print(instructions)
 
 for l in orig_src:
     if '=' in l:
@@ -34,7 +34,7 @@ for l in orig_src:
             v, vname = a.strip().split(' ')[:4], a.strip().split(' ')[4]
             if v == 'private static final String'.split(' '):
                 if vname.count('_') == 2 and len(vname) == 5:
-                    print(vname)
+                    # print(vname)
                     long_vars[vname] = prep_str(b)
 
                 elif vname == 'GO_TEXT':
@@ -47,13 +47,13 @@ for l in orig_src:
                     c_t = prep_str(b)
                 else:
                     short_vars[vname] = prep_str(b)
-                    print('other var:', vname)
+                    # print('other var:', vname)
         except Exception as e:
-            print(e, a)
+            pass # print(e, a)
 
-print('LV:')
-for p in long_vars.items():
-    print(p)
+#print('LV:')
+# for p in long_vars.items():
+#    print(p)
 
 print(g_t, e_t, sep='\n')
 equipment = input()
@@ -61,8 +61,6 @@ print(c_i_t)
 print(c_t)
 choice = input()
 
-
-#
 
 def find_res(choice):
     res = dict(zip(
